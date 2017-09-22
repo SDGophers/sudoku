@@ -126,7 +126,7 @@ func (b Board) String() (out string) {
 
 func (b *Board) Solve() error {
 	// Stack of backtracking points. (value, row, col)
-	var backtrack [][3]int
+	var backtrack = make([][3]int, 0, 1024/3)
 	startVal := 1
 	for r := 0; r < len(b); r++ {
 	LoopCol:
